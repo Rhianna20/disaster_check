@@ -20,3 +20,6 @@ apis:
 3. earthquake api https://www.npmjs.com/package/usgs-earthquake-api
 4. https://stackoverflow.com/questions/12879223/disaster-apis-for-disaster-response-application/27040696
 
+Initally thought i had found an api that distrubes data on live volcano eruptions, going to use an earthquake api in the meantime.
+
+exported component must be named the same as variable names.

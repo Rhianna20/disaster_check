@@ -12,4 +12,6 @@ const disasterData = async () => {
   }
 };
 
+
+
 module.exports = { disasterData };
