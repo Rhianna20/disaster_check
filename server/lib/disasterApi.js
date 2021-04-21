@@ -4,9 +4,10 @@ const disasterData = async () => {
   // reuqest for natural disaster data
   try {
     const response = await axios.get(
-"https://earthquake.usgs.gov/fdsnws/event/1/application.json" );
-    console.log(response.data['eventtypes']);
-    return response.data['eventtypes'];
+"https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson" );
+    console.log(response.data.features);
+      // console.log(response.data);
+    return response.data.features;
   } catch (error) {
     // console.log(error);
   }
@@ -15,3 +16,5 @@ const disasterData = async () => {
 
 
 module.exports = { disasterData };
+
+

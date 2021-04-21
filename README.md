@@ -19,6 +19,9 @@ apis:
 2. https://documenter.getpostman.com/view/5841816/S17wM6DE#5f1579ef-aacc-4805-837f-e23adceed3f8
 3. earthquake api https://www.npmjs.com/package/usgs-earthquake-api
 4. https://stackoverflow.com/questions/12879223/disaster-apis-for-disaster-response-application/27040696
+5. https://www.programmableweb.com/news/6-apis-earthquakes/brief/2020/04/19
+6. https://apidoc.rwlabs.org/field-tables
+7. https://www.openhazards.com/data
 
 Initally thought i had found an api that distrubes data on live volcano eruptions, going to use an earthquake api in the meantime.
 

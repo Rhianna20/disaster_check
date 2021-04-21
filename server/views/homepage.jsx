@@ -9,16 +9,20 @@ const homepage = props => {
             <title>Document</title>
         </head>
         <body>
+            <div>
             <h1>Disaster hub</h1>
-           
-           <p> {props.data[8]} </p>
-           
-           <p> {props.data[40]} </p>
-           <p> {props.data[41]} </p>
-           
+
+           {/* <p> {JSON.stringify(props.data)} </p> */}
+           {props.data.map(earthquake => {
+               return (
+                   <p>{earthquake.properties.place}</p>
+               )
+           })}
+           </div>
         </body>
         </html>
     )
 }
 
 module.exports = { homepage }
+
