@@ -4,10 +4,12 @@ const disasterData = async () => {
   // request for recent earthquake data
   try {
     const response = await axios.get(
-"https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson" );
-    console.log(response.data.features);
-    // const currentDisaster = response.data.features[0].geometry;
-    return response.data.features;
+      "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson"
+    );
+
+    const data = response.data.features;
+
+    return data;
   } catch (error) {
     console.log(error);
   }
@@ -23,8 +25,4 @@ const disasterData = async () => {
 //   }
 // }
 
-
-
 module.exports = { disasterData };
-
-

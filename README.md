@@ -49,3 +49,8 @@ api: https://eonet.sci.gsfc.nasa.gov/api/v3/events/geojson
 mapbox tutorial https://docs.mapbox.com/help/tutorials/use-mapbox-gl-js-with-react/
 
 Initially I would of liked to be able to approach my project and know exactly whats needed without any assistance, but I've realized I learn way more from asking question even on things I truly believe I get, beside I love a good chat, small talks long talks, I just love socializing. I've found myself asking the same question multiple times not knowing it was identical untill I seen what discovered 
+
+I have to somehow move the data collected from the api from the server side to the client side... explaination slightly blurred out from Amiyah's screams.. the usual.  
+
+I've been blocked for sometime, but I spent time working on other tickets and took a couple days off on this project. HOWEVERR, i finally managed to connect my livetime api calls with my map markers! So when an earthquake goes off in hawaii a icon with appear in the exact place. Which is fricking awesome. 
+Now thats out of the way, the next step I would like to add a pop up box to each marker with further information on the earthquake. The magnitude, time etc. Was thinking to add a links to organisations that help people/ animals when facing a natural hazard.

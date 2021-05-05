@@ -19,6 +19,7 @@ const homepage = props => {
             <h1>Disaster hub</h1>
 
             <div id='map' style={{width: 600, height: 600}}></div>
+            <div id='marker' className='marker'></div>
             <script src="static/mapbox.js"></script>
 
             <strong><p>Earthquakes gone of in the past hour:</p></strong>
