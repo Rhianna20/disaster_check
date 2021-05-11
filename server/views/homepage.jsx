@@ -1,5 +1,9 @@
 const React = require('react');
 
+ 
+const mapStyle = {width: 650, height: 600, left: 300};
+
+
 const homepage = props => {
     return (
         <html lang="en">
@@ -18,22 +22,22 @@ const homepage = props => {
             <div>
             <h1>Disaster hub</h1>
 
-            <div id='map' style={{width: 600, height: 600}}></div>
-            <div id='marker' className='marker'></div>
+            <div id='map' style={mapStyle}></div>
+           
             <script src="static/mapbox.js"></script>
 
             <strong><p>Earthquakes gone of in the past hour:</p></strong>
            {/* <p> {JSON.stringify(props.data)} </p> */}
            {props.data.map(earthquake => {
                return (
-                   <p>{earthquake.properties.place}</p>
+                   <p >{earthquake.properties.place}</p>
                    
                )
            })}
 
             {props.data.map(earthquake => {
                return (
-                   <p>{earthquake.properties.mag}</p>
+                   <p >{earthquake.properties.mag}</p>
                    
                )
            })}

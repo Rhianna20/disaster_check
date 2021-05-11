@@ -5,11 +5,10 @@ const map = new mapboxgl.Map({
   container: "map", // container ID
   style: "mapbox://styles/mapbox/streets-v11", // style URL
   center: [-74.5, 40], // starting position [lng, lat]
-  zoom: 0, // starting zoom
+  zoom: 2, // starting zoom
 });
 
 //create a popup
-const popup = new mapboxgl.Popup({ offset: 25 }).setText();
 
 const url =
   "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson";
@@ -23,7 +22,17 @@ map.on("load", function () {
     request.onload = function () {
       if (this.status >= 200 && this.status < 400) {
         // retrieve the JSON from the response
+
         const json = JSON.parse(this.response);
+        console.log(json)
+        // const popup = new window.mapboxgl.Popup({
+        //     closeOnClick: false
+        // })
+        // map.on('click', (e) => {
+        //     const coordinates = e.features[0].geometry.coordinates.slice();
+        //     const html = '<p>Tell em</p>'
+        //     popup.setLngLat(coordinates).setHtml(html).addTo
+        // })
 
         // update the drone symbol's location on the map
         map.getSource("drone").setData(json);
@@ -50,6 +59,40 @@ map.on("load", function () {
       // To add a new image to the style at runtime see
       // https://docs.mapbox.com/mapbox-gl-js/example/add-image/
       "icon-image": "rocket-15",
+      //allows multiple images close in location to appear
+      "icon-allow-overlap": true,
     },
   });
 });
+
+//create one overlay
+
+map.on("click", "drone", function (e) {
+
+  const coordinates = e.features[0].geometry.coordinates.slice();
+  const description = e.features[0].properties.description;
+
+   
+  // Ensure that if the map is zoomed out such that multiple
+  // copies of the feature are visible, the popup appears
+  // over the copy being pointed to.
+  while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+  coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+  }
+   
+  new mapboxgl.Popup()
+  .setLngLat(coordinates)
+  .setHTML(description)
+  .addTo(map);
+  });
+   
+  // Change the cursor to a pointer when the mouse is over the places layer.
+  map.on('mouseenter', 'places', function () {
+  map.getCanvas().style.cursor = 'pointer';
+  });
+   
+  // Change it back to a pointer when it leaves.
+  map.on('mouseleave', 'places', function () {
+  map.getCanvas().style.cursor = '';
+    });
+  
