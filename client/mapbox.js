@@ -70,14 +70,14 @@ map.on("load", function () {
 map.on("click", "drone", function (e) {
 
   const coordinates = e.features[0].geometry.coordinates.slice();
-  const description = e.features[0].properties.title;
-
+  const description = '<strong>Location:</strong>  ' + e.features[0].properties.place;
+  const magnitude = '<strong>Magnitude:</strong>   ' + e.features[0].properties.mag;
    
 
    
   new mapboxgl.Popup()
   .setLngLat(coordinates)
-  .setHTML(description)
+  .setHTML(description + '        ' + magnitude)
   .addTo(map);
   });
    
