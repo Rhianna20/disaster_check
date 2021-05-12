@@ -4,6 +4,7 @@ const React = require('react');
 const mapStyle = {width: 650, height: 600, left: 300};
 
 
+
 const homepage = props => {
     return (
         <html lang="en">
@@ -30,7 +31,7 @@ const homepage = props => {
            {/* <p> {JSON.stringify(props.data)} </p> */}
            {props.data.map(earthquake => {
                return (
-                   <p >{earthquake.properties.place}</p>
+                <center>   <p>{earthquake.properties.place}</p> </center>
                    
                )
            })}
