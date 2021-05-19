@@ -24,7 +24,7 @@ map.on("load", function () {
         // retrieve the JSON from the response
 
         const json = JSON.parse(this.response);
-        console.log(json)
+       
         // const popup = new window.mapboxgl.Popup({
         //     closeOnClick: false
         // })

@@ -1,0 +1,29 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+}
+.heading{
+    color: royalblue;
+    text-shadow: 2px 2px #b6b6b6;
+    top: 0;
+    font-size: 40px;
+    text-align: center;
+}
+.map {
+    width: 650;
+    height: 500;
+    align-items: center;
+    align-self: center;
+}
+.headingtwo{
+    color: royalblue;
+    text-shadow: 2px 2px #b6b6b6;
+
+}
+
+.eqdescription{
+    background-color: white;
+}
+.hazardls{
+  display: none;
+}
