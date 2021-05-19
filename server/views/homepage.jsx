@@ -8,26 +8,15 @@ const mapStyle = {width: 650, height: 600, left: 300};
 
 const homepage = props => {
     return (
-        <html lang="en">
-        <head>
-            <meta charSet="UTF-8"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-            
-           
-<script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
-<link href='/css/style.css' rel='stylesheet' ></link>
-<script src="/js/index.js"></script>
-            <title>Document</title>
-
-        </head>
+    
+   
         <body>
             <div>
             <h1 className='heading'>Disaster hub</h1>
             {/* map box object */}
-            <div className='map' style={mapStyle}></div>
+            <div className='map' ></div>
             
-            <script src="/static/client/mapbox.js"></script>
+            
             {/* button reveals list of recent earthquakes */}
           <button className='button'>Click</button>
 
@@ -56,7 +45,7 @@ const homepage = props => {
 
            </div>
         </body>
-        </html>
+      
     )
 }
 
