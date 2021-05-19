@@ -10,7 +10,7 @@ const volcanoData = require('./lib/volcanoApi')
 
 // const map = require('./lib/mapbox')
 
-app.use('/static', express.static("public"));
+app.use(express.static("public"));
 
 
 // Request to main page

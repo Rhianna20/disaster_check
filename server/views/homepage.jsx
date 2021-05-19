@@ -16,8 +16,8 @@ const homepage = props => {
            
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
-<link href='/static/css/style.css' rel='stylesheet' ></link>
-<script src="/static/js/index.js"></script>
+<link href='/css/style.css' rel='stylesheet' ></link>
+<script src="/js/index.js"></script>
             <title>Document</title>
 
         </head>
