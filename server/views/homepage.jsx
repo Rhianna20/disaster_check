@@ -10,11 +10,13 @@ const homepage = props => {
     return (
     
    
-        <body>
+       
             <div>
-            <h1 className='heading'>Disaster hub</h1>
+            
             {/* map box object */}
-            <div className='map' ></div>
+            
+
+            <script src="../client/mapbox.js"></script>
             
             
             {/* button reveals list of recent earthquakes */}
@@ -44,7 +46,7 @@ const homepage = props => {
 
 
            </div>
-        </body>
+  
       
     )
 }

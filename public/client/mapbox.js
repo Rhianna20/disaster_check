@@ -1,6 +1,4 @@
-mapboxgl.accessToken =
-  "pk.eyJ1IjoicmhpY29kZXMiLCJhIjoiY2tucms4bWNjMHBiZzMwcGZ4a3hzcWdieSJ9.khYnouHqfA2um_QyOtmMyA";
-
+mapboxgl.accessToken ="pk.eyJ1IjoicmhpY29kZXMiLCJhIjoiY2tucms4bWNjMHBiZzMwcGZ4a3hzcWdieSJ9.khYnouHqfA2um_QyOtmMyA"
 const map = new mapboxgl.Map({
   container: "map", // container ID
   style: "mapbox://styles/mapbox/streets-v11", // style URL
@@ -24,7 +22,7 @@ map.on("load", function () {
         // retrieve the JSON from the response
 
         const json = JSON.parse(this.response);
-       
+        console.log(json)
         // const popup = new window.mapboxgl.Popup({
         //     closeOnClick: false
         // })
