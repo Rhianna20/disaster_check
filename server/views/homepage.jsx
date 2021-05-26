@@ -14,7 +14,9 @@ const homepage = props => {
             <div>
             <h1 className='heading'>Disaster hub</h1>
             {/* map box object */}
-            <div className='map' ></div>
+            <div id='map' className='map' ></div>
+
+            <script src="/static/client/mapbox.js"></script>
             
             
             {/* button reveals list of recent earthquakes */}
