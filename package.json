@@ -2,10 +2,10 @@
   "name": "disaster_check",
   "version": "1.0.0",
   "description": "An application that has live updates of natural disasters throughout the globe.",
-  "main": "index.js",
+  "main": "server/app.js",
   "scripts": {
     "test": "jest",
-    "start": "node server/app.js"
+    "start": "nodemon server/app.js"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,8 @@
   "devDependencies": {
     "css-loader": "^5.2.4",
     "eslint": "^7.24.0",
-    "jest": "^26.6.3"
+    "jest": "^26.6.3",
+    "webpack": "^5.35.1",
+    "webpack-cli": "^4.7.0"
   }
 }

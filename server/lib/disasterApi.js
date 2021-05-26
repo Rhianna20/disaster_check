@@ -15,6 +15,7 @@ const disasterData = async () => {
   }
 };
 
+
 // const volcanoApi = async () => {
 //   try {
 //     const response = await axios.get("www.ngdc.noaa.gov:12152/hazel/hazard-service");

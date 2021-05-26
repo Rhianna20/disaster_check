@@ -1,5 +1,6 @@
 const React = require('react');
-
+ 
+ 
  
 const mapStyle = {width: 650, height: 600, left: 300};
 
@@ -7,27 +8,23 @@ const mapStyle = {width: 650, height: 600, left: 300};
 
 const homepage = props => {
     return (
-        <html lang="en">
-        <head>
-            <meta charSet="UTF-8"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-            
-           
-<script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
-
-            <title>Document</title>
-            
-        </head>
+    
+   
         <body>
             <div>
-            <h1>Disaster hub</h1>
+            <h1 className='heading'>Disaster hub</h1>
+            {/* map box object */}
+            <div className='map' ></div>
+            
+            
+            {/* button reveals list of recent earthquakes */}
+          <button className='button'>Click</button>
 
-            <div id='map' style={mapStyle}></div>
+        
+          <div className='hazardls' id='hazardls'>
            
-            <script src="static/mapbox.js"></script>
-
-            <strong><p>Earthquakes gone of in the past hour:</p></strong>
+            <strong><p className='headingtwo'>Earthquakes gone of in the past hour:</p></strong>
+          
            {/* <p> {JSON.stringify(props.data)} </p> */}
            {props.data.map(earthquake => {
                return (
@@ -42,9 +39,13 @@ const homepage = props => {
                    
                )
            })}
+            </div>
+           <p className='eqdescription'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat ea minima doloribus vitae reiciendis, a consequuntur, ipsam eveniet error perferendis nam modi delectus laboriosam pariatur, libero itaque tempore earum? Sunt.</p>
+
+
            </div>
         </body>
-        </html>
+      
     )
 }
 
