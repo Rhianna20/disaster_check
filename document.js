@@ -13,15 +13,18 @@ return `
         <title>Document</title>
 
     </head>
+<body>
+<h1 class='heading'> Disaster Hub </h1>
 
     <div id='map' class='map'></div>
             
-    ${body}
+   
     <script src="../client/mapbox.js"></script>
         
-    
+    ${body}
 
     <script src="/js/index.js"></script>
+    </body>
     </html>
 
 `
