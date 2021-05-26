@@ -13,7 +13,7 @@ app.use("/static", express.static("client"));
 // Request to main page
 app.get("/", async function (req, res) {
   const natualHazards = await disasterApi.disasterData();
-
+  console.log(natualHazards)
   const html = ReactDOMServer.renderToString(
     React.createElement(homepage, {
       data: natualHazards,

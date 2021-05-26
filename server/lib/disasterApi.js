@@ -8,7 +8,7 @@ const disasterData = async () => {
     );
 
     const data = response.data.features;
-
+      
     return data;
   } catch (error) {
     console.log(error);
