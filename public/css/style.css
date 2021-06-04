@@ -1,29 +1,125 @@
 *{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+body{
+    height: 2000px;
+    background-color: rgb(110, 216, 209);
 }
 .heading{
-    color: royalblue;
-    text-shadow: 2px 2px #b6b6b6;
+    color: rgb(44, 206, 150);
+    text-shadow: 2px 2px brown;
     top: 0;
     font-size: 40px;
     text-align: center;
+    animation: shake 0.90s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+
+    perspective: 1000px;
+   
 }
 .map {
     width: 650;
     height: 500;
     align-items: center;
     align-self: center;
+    position: sticky;
+    left: 25%;
 }
 .headingtwo{
-    color: royalblue;
-    text-shadow: 2px 2px #b6b6b6;
-
+    color: black;
+    background-color: 3px 3px white;
 }
-
+.eqdescription, .hide{
+    opacity: 0;
+}
+.eqdescription .show{
+    opacity: 1;
+}
 .eqdescription{
-    background-color: white;
+ color: white;  
+ bottom: 0;
+ width: 100%;
+ background: lime;
+ z-index: 1;
+ transition: all .5s;
+ 
 }
-.hazardls{
+.recentEarthquakes{
+    position: fixed;
+    z-index: 1;
+    left: 1%;
+    right: 2%;
+    top: 25%;
+    width: 100%; 
+    height: 50%;
+    overflow: auto;
+    border: black;
+    display: none;
+    background-color: rgba(61, 226, 255, 0.639); 
+    background-color: rgba(255, 255, 255, 0.577); 
+    color: black;
+    border: black;
+    margin: 2px;
 
 }
+.button {
+    margin: 2px;
+    color: white;
+    box-sizing: border-box;
+    border-color: 2px 2px brown;
+    align-items: center;
+    align-self: center;
+    position: relative;
+    padding: 16px 32px;
+    text-align: center;
+    opacity: 0.6;
+    transition: 0.3s;
+    left: 25%;
+    width: 100px;
+    height: 50px;
+    background-color: rgb(65, 227, 170);;
+    text-shadow: 2px 1px #ffffff;
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+@keyframes shake {
+    10%, 90%{
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+      }
+    
+      30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+      }
+    
+      40%, 60% {
+        transform: translate3d(4px, 0, 0);
+      }
+
+
+}
+.button:hover {
+    opacity: 16;
+    background-color: rgba(22, 245, 130, 0.838);
+    color: white;
+    width: 110px;
+    height: 59px;
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    border: black;
+}
+
+.earthquakeDescription{
+    margin: 1% auto;
+    padding: 2px;
+    width: 80%;
+    color: black;
+   
+}
+
