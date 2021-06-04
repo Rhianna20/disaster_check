@@ -23,23 +23,17 @@ map.on("load", function () {
 
         const json = JSON.parse(this.response);
         console.log(json)
-        // const popup = new window.mapboxgl.Popup({
-        //     closeOnClick: false
-        // })
-        // map.on('click', (e) => {
-        //     const coordinates = e.features[0].geometry.coordinates.slice();
-        //     const html = '<p>Tell em</p>'
-        //     popup.setLngLat(coordinates).setHtml(html).addTo
-        // })
-
+  
         // update the drone symbol's location on the map
         map.getSource("drone").setData(json);
 
+          //fly to animation not currently working!
+
         // fly the map to the drone's current location
-        map.flyTo({
-          center: json.geometry.coordinates,
-          speed: 1,
-        });
+        // map.flyTo({
+        //   center: json.geometry.coordinates,
+        //   speed: 1,
+        // });
       }
     };
     request.send();
