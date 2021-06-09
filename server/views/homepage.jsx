@@ -1,5 +1,5 @@
 const React = require('react');
- 
+const ReactDOM = require('react-dom');
  
  
 
@@ -7,7 +7,12 @@ const React = require('react');
 
 const homepage = props => {
     return (
+       
             <div>
+{/* 
+    {ReactDOM.render(
+            <Navbar />
+        ) } */}
 
           <div className='recentEarthquakes' id='recentEarthquakes'>
            
