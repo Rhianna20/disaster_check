@@ -16,9 +16,20 @@ button.addEventListener('click', function (){
     }
     console.log('working!')
 
-});
-document.getElementById('eqdescription').onscroll = function()
-{myFaunction()};
-function myFaunction() {
-    document.getElementById('eqdescription').innerHTML = "HELOO"
+}); 
+
+document.addEventListener('scroll', reveal);
+
+
+
+function reveal(){
+    document.getElementById('revealInfo').innerHTML = " HBFCIJDKNBHGVYHBJN"
+    console.log('Any luck??')
+
 }
+
+// document.getElementById('eqdescription').onscroll = myFunction()
+// {myFunction()};
+// function myFunction() {
+//     document.getElementById('eqdescription').innerHTML = "HELOO"
+// }
