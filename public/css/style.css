@@ -1,6 +1,24 @@
 *{
     font-family: Verdana, Geneva, Tahoma, sans-serif
 }
+p{
+    color:  rgba(27, 4, 48, 0.625);
+    font-weight: 500;
+
+    padding: 6mm;
+   
+    
+}
+ul{
+    color:  rgba(27, 4, 48, 0.625);
+    font-weight: 500;
+    
+}
+.specialText{
+    color: rgb(255, 228, 20);
+    font-weight: bold;
+ 
+}
 body{
     height: 2000px;
     background-color: rgb(110, 216, 209);
@@ -26,8 +44,15 @@ body{
     left: 25%;
 }
 .headingtwo{
-    color: black;
+    color: rgb(44, 206, 150);
+    font-weight: 800;
     background-color: 3px 3px white;
+}
+.headingthree{
+    color: whitesmoke;
+    font-weight: 900;
+    margin-left: 5mm;
+    padding: 2mm;
 }
 .eqdescription, .hide{
     opacity: 0;
@@ -36,13 +61,21 @@ body{
     opacity: 1;
 }
 .eqdescription{
+    border-style: inset;
+    border-width:  3px;
  color: white;  
  bottom: 0;
  width: 100%;
  background: lime;
  z-index: 1;
  transition: all .5s;
- 
+}
+.reveallInfo{
+    border: 1px solid black;
+    width: 200px;
+    height: 100px;
+    overflow: scroll;
+
 }
 .recentEarthquakes{
     position: fixed;
