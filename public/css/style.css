@@ -2,20 +2,19 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 p{
-    color:  rgba(27, 4, 48, 0.625);
+    color:  rgb(27, 4, 48);
     font-weight: 500;
-
-    padding: 6mm;
-   
-    
+     padding: 6mm;
+ 
+   line-height: 1.6;
 }
 ul{
-    color:  rgba(27, 4, 48, 0.625);
+    color:  rgb(27, 4, 48);
     font-weight: 500;
     
 }
 .specialText{
-    color: rgb(255, 228, 20);
+    color: rgb(110, 216, 209);
     font-weight: bold;
  
 }
@@ -24,7 +23,7 @@ body{
     background-color: rgb(110, 216, 209);
 }
 .heading{
-    color: rgb(44, 206, 150);
+    color: rgb(255, 255, 255);
     text-shadow: 2px 2px brown;
     top: 0;
     font-size: 40px;
@@ -49,10 +48,19 @@ body{
     background-color: 3px 3px white;
 }
 .headingthree{
-    color: whitesmoke;
+   
     font-weight: 900;
     margin-left: 5mm;
     padding: 2mm;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px brown;
+    top: 0;
+    font-size: 30px;
+    text-align: center;
+    animation: shake 0.90s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+
+    perspective: 1000px;
 }
 .eqdescription, .hide{
     opacity: 0;
@@ -156,3 +164,14 @@ body{
    
 }
 
+.card{
+    border: whitesmoke;
+    border-style: solid;
+    background-color: whitesmoke;
+    box-shadow: 2px 2px 4px #464444;
+    margin: 30px;
+    font-size: 15px;
+    border-radius: 30px;
+    overflow-wrap: normal;
+    display: flex;
+}

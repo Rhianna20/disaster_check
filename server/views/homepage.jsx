@@ -23,19 +23,24 @@ const homepage = (props) => {
           );
         })}
       </div>
+      {/* <p>A map of Earthquakes that have gone off in the last hours</p> */}
       <button className="button" value="press">
-        Click
+        Click 
       </button>
 
         <h3  className="headingthree">Fun Facts</h3>
-      <p> An <span className="specialText">earthquake</span> is what occurs when ground shaking is caused by a sudden
+        <div className="card">
+      <p> An <span className="specialText">Earthquake</span> is what occurs when ground shaking is caused by a sudden
       slip or a fault. A fault is a thin zone of crushed rock separating blocks
       of the earth's crust. The fault is a thin zone of crushed rock separating blocks of the earth, The faults surface can be vertical, horizontal, or at
       some angle to the surface of the earth.
       are caused by the Tectonic Plates </p>
-     
+      </div>
+      <img src="earthsurface.jpg" alt="An image of earth surfaces"/> 
+     < a href="https://www.freepik.com/vectors/infographic">Infographic vector created by brgfx - www.freepik.com</a>
+      <div className="card">
       <ul>
-      <p>The earth is made up of different layers:</p>
+      <h3>The earth is made up of different layers:</h3>
         {" "}
         <li>
         <span className="specialText"> The Core</span> which is at the centre, is a dense solid made from iron and
@@ -54,14 +59,20 @@ const homepage = (props) => {
           the part we can see!
         </li>
       </ul>
+      </div>
+      <div className="card">
       <p>Earthquakes can strike any location at any time. But history shows they occur in the same general patterns over time
 </p>
+</div>
+<div className='card'>
 <p>Minor earthquakes induced by human activity have been documented in the United States, Japan, and Canada</p>
+</div><div className='card'>ß
  <p> Deep mining can cause small to moderate quakes and nuclear testing has caused small earthquakes in the immediate area surrounding the test site, but other human activities have not been shown to trigger subsequent earthquakes.</p>     
  <p>The largest recorded earthquake in the world was a magnitude 9.5 (Mw) in Chile on May 22, 1960. </p>
 
  <p>Moonquakes (“earthquakes” on the moon) do occur, but they happen less frequently and have smaller magnitudes than earthquakes on the Earth. </p>
-      <div id="revealInfo" onScroll="reveal()">
+ </div>
+     <div id="revealInfo" onScroll="reveal()">
         <p id="eqdescription" className="eqdescription hide">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat ea
           minima doloribus vitae reiciendis, a consequuntur, ipsam eveniet error
