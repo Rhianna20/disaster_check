@@ -4,7 +4,7 @@ const button = document.querySelector('.button');
 
 button.addEventListener('click', function (){ 
     if (hazards.style.display !== 'none'){
-        button.innerHTML = "Show"
+        
 
         hazards.style.display = "none"; 
         
