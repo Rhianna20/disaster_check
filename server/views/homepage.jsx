@@ -36,7 +36,7 @@ const homepage = (props) => {
       some angle to the surface of the earth.
       are caused by the Tectonic Plates </p>
       </div>
-      <img src="earthsurface.jpg" alt="An image of earth surfaces"/> 
+   
      < a href="https://www.freepik.com/vectors/infographic">Infographic vector created by brgfx - www.freepik.com</a>
       <div className="card">
       <ul>
