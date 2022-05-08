@@ -9,8 +9,9 @@ const disasterApi = require("./lib/hourlyShakes");
 const dailyEarthquake = require('./lib/dailyEarthquake')
 const { document } = require('../document');
 const monthlyShakes = require('./lib/monthEarthquakes')
+// const { dailyDoc} = require('../dailydoc')
 
-// const map = require('./lib/mapbox')
+
 
 app.use(express.static("public"));
 
@@ -35,7 +36,7 @@ app.get("/daily", async function (req, res){
    
   const body = ReactDOMServer.renderToString(
     React.createElement(homepage, {
-      data: dailyShakeData
+      data: dailyShakeData,
     })
 )
   const html = document(body)
@@ -44,11 +45,11 @@ app.get("/daily", async function (req, res){
 
 app.get("/monthly", async function (req, res){
   
-  const dailyShakeData = await monthlyShakes.monthlyEarthquakesData();
+  const monthlyShakeData = await monthlyShakes.monthlyEarthquakesData();
   
  const body = ReactDOMServer.renderToString(
    React.createElement(homepage, {
-     data: dailyShakeData
+     data: monthlyShakeData
    })
 )
  const html = document(body)

@@ -17,11 +17,16 @@ return `
 <h1 class='heading'> Disaster Hub </h1>
 
     <div id='map' class='map'></div>
-            
-   
+    
     <script src="../client/mapbox.js"></script>
+    <script src="../client/weeklyMapbox.js"></script>   
+    <script src="../client/monthlyMapbox.js"></script>
+
         
     ${body}
+            // Try tenary opertator. querying routes to utilze script
+        
+
 
     <script src="/js/index.js"></script>
     </body>
