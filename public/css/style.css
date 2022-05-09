@@ -42,6 +42,14 @@ body{
     position: sticky;
     left: 25%;
 }
+.map2 {
+    width: 650;
+    height: 500;
+    align-items: center;
+    align-self: center;
+    position: sticky;
+    left: 25%;
+}
 .headingtwo{
     color: rgb(44, 206, 150);
     font-weight: 800;
