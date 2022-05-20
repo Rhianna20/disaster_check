@@ -9,15 +9,15 @@ const disasterApi = require("./lib/hourlyShakes");
 const dailyEarthquake = require('./lib/dailyEarthquake')
 const { document } = require('../document');
 const monthlyShakes = require('./lib/monthEarthquakes')
-// const { dailyDoc} = require('../dailydoc')
-
+const { dailyDoc} = require('../dailydoc')
+const {weeklyTemplate} = require('../weeklyTemplate')
 
 
 app.use(express.static("public"));
 
 
 // Request to main page
-app.get("/", async function (req, res) {
+app.get("/dailyEarthquakes", async function (req, res) {
   const natualHazards = await disasterApi.disasterData();
  
   
@@ -30,7 +30,7 @@ app.get("/", async function (req, res) {
   res.send(html);
 });
 
-app.get("/daily", async function (req, res){
+app.get("/weeklyEarthquakes", async function (req, res){
   
    const dailyShakeData = await dailyEarthquake.dailyShakes();
    
@@ -39,11 +39,11 @@ app.get("/daily", async function (req, res){
       data: dailyShakeData,
     })
 )
-  const html = document(body)
+  const html = weeklyTemplate(body)
   res.send(html)
 })
 
-app.get("/monthly", async function (req, res){
+app.get("/monthlyEarthquakes", async function (req, res){
   
   const monthlyShakeData = await monthlyShakes.monthlyEarthquakesData();
   
@@ -52,7 +52,7 @@ app.get("/monthly", async function (req, res){
      data: monthlyShakeData
    })
 )
- const html = document(body)
+ const html = dailyDoc(body)
  res.send(html)
 })
 

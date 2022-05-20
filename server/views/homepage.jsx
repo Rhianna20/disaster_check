@@ -1,8 +1,13 @@
 const React = require("react");
 
-const homepage = (props, map) => {
+const homepage = (props, ) => {
   return (
+
     <div>
+      
+      <a className="buttonTemplate" type="button" href="/dailyEarthquakes" >Daily</a>
+      <a className="buttonTemplate" type="button" href="/weeklyEarthquakes">Weekly</a>
+      <a className="buttonTemplate" type="button" href="/monthlyEarthquakes">Monthly</a>
       <div className="recentEarthquakes" id="recentEarthquakes">
         <strong>
           <p className="headingtwo">Earthquakes gone of in the past hour:</p>
