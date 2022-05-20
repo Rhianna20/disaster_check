@@ -1,0 +1,53 @@
+
+   
+  mapboxgl.accessToken ="pk.eyJ1IjoicmhpY29kZXMiLCJhIjoiY2tucms4bWNjMHBiZzMwcGZ4a3hzcWdieSJ9.khYnouHqfA2um_QyOtmMyA"
+let monthlyMap = new mapboxgl.Map({
+  container: "monthlyMap", // container ID
+  style: "mapbox://styles/mapbox/streets-v11", // style URL
+  center: [-74.5, 40], // starting position [lng, lat]
+  zoom: 2, // starting zoom
+});
+
+//create a popup
+
+let monthlyMarkers =
+  "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson";
+  monthlyMap.on("load", function () {
+  
+
+  monthlyMap.addSource("drone", { type: "geojson", data: monthlyMarkers });
+  monthlyMap.addLayer({
+    id: "drone",
+    type: "symbol",
+    source: "drone",
+    layout: {
+      // This icon is a part of the Mapbox Streets style.
+      // To view all images available in a Mapbox style, open
+      // the style in Mapbox Studio and click the "Images" tab.
+      // To add a new image to the style at runtime see
+      // https://docs.mapbox.com/mapbox-gl-js/example/add-image/
+      "icon-image": "rocket-15",
+      //allows multiple images close in location to appear
+      "icon-allow-overlap": true,
+    },
+  });
+});
+
+//create one overlay
+
+monthlyMap.on("click", "drone", function (e) {
+
+  const coordinates = e.features[0].geometry.coordinates.slice();
+  const description = '<strong>Location:</strong>  ' + e.features[0].properties.place;
+  const magnitude = '<strong>Magnitude:</strong>   ' + e.features[0].properties.mag;
+   
+
+   
+  new mapboxgl.Popup()
+  .setLngLat(coordinates)
+  .setHTML(description + '        ' + magnitude)
+  .addTo(monthlyMaps);
+  });
+   
+
+  
