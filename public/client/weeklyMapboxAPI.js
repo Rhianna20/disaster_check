@@ -1,6 +1,6 @@
 mapboxgl.accessToken ="pk.eyJ1IjoicmhpY29kZXMiLCJhIjoiY2tucms4bWNjMHBiZzMwcGZ4a3hzcWdieSJ9.khYnouHqfA2um_QyOtmMyA"
-let map = new mapboxgl.Map({
-  container: "map", // container ID
+let weeklyMap = new mapboxgl.Map({
+  container: "weeklyMap", // container ID
   style: "mapbox://styles/mapbox/streets-v11", // style URL
   center: [-74.5, 40], // starting position [lng, lat]
   zoom: 2, // starting zoom
@@ -8,9 +8,9 @@ let map = new mapboxgl.Map({
 
 //create a popup
 
-let url =
+let weeklyMarkers =
   "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
-map.on("load", function () {
+  weeklyMap.on("load", function () {
   // Load an image from an external URL
 
   // const request = new XMLHttpRequest();
@@ -37,8 +37,8 @@ map.on("load", function () {
   //   request.send();
   // }, 2000);
 
-  map.addSource("drone", { type: "geojson", data: url });
-  map.addLayer({
+  weeklyMap.addSource("drone", { type: "geojson", data: weeklyMarkers });
+  weeklyMap.addLayer({
     id: "drone",
     type: "symbol",
     source: "drone",
@@ -57,7 +57,7 @@ map.on("load", function () {
 
 //create one overlay
 
-map.on("click", "drone", function (e) {
+weeklyMap.on("click", "drone", function (e) {
 
   const coordinates = e.features[0].geometry.coordinates.slice();
   const description = '<strong>Location:</strong>  ' + e.features[0].properties.place;
@@ -68,7 +68,7 @@ map.on("click", "drone", function (e) {
   new mapboxgl.Popup()
   .setLngLat(coordinates)
   .setHTML(description + '        ' + magnitude)
-  .addTo(map);
+  .addTo(weeklyMap);
   });
    
 

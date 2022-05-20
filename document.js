@@ -7,6 +7,7 @@ return `
         
        
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+
 <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
 <link href='/css/style.css' rel='stylesheet' />
 
@@ -15,17 +16,15 @@ return `
     </head>
 <body>
 <h1 class='heading'> Disaster Hub </h1>
-
+<div text="hourly" type="button" >
     <div id='map' class='map'></div>
-    
-    <script src="../client/mapbox.js"></script>
-    <script src="../client/weeklyMapbox.js"></script>   
-    <script src="../client/monthlyMapbox.js"></script>
+    </div>
 
-        
+
+    <script src="../client/dailyMapboxAPI.js"></script>
+   
     ${body}
-            // Try tenary opertator. querying routes to utilze script
-        
+            
 
 
     <script src="/js/index.js"></script>

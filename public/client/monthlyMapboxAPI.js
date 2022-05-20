@@ -1,8 +1,8 @@
 
    
   mapboxgl.accessToken ="pk.eyJ1IjoicmhpY29kZXMiLCJhIjoiY2tucms4bWNjMHBiZzMwcGZ4a3hzcWdieSJ9.khYnouHqfA2um_QyOtmMyA"
-let map = new mapboxgl.Map({
-  container: "map", // container ID
+let monthlyMap = new mapboxgl.Map({
+  container: "monthlyMap", // container ID
   style: "mapbox://styles/mapbox/streets-v11", // style URL
   center: [-74.5, 40], // starting position [lng, lat]
   zoom: 2, // starting zoom
@@ -10,37 +10,13 @@ let map = new mapboxgl.Map({
 
 //create a popup
 
-let url =
+let monthlyMarkers =
   "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson";
-map.on("load", function () {
-  // Load an image from an external URL
-
-  // const request = new XMLHttpRequest();
-  // window.setInterval(function () {
-  //   // make a GET request to parse the GeoJSON at the url
-  //   request.open("GET", url, true);
-  //   request.onload = function () {
-  //     if (this.status >= 200 && this.status < 400) {
-  //       // retrieve the JSON from the response
-
-  //       const json = JSON.parse(this.response);
-  //       console.log(json)
+  monthlyMap.on("load", function () {
   
-  //       // update the drone symbol's location on the map
-  //       map.getSource("drone").setData(json);
-  //         //fly to animation not currently working!
-  //       // fly the map to the drone's current location
-  //       // map.flyTo({
-  //       //   center: json.geometry.coordinates,
-  //       //   speed: 1,
-  //       // });
-  //     }
-  //   };
-  //   request.send();
-  // }, 2000);
 
-  map.addSource("drone", { type: "geojson", data: url });
-  map.addLayer({
+  monthlyMap.addSource("drone", { type: "geojson", data: monthlyMarkers });
+  monthlyMap.addLayer({
     id: "drone",
     type: "symbol",
     source: "drone",
@@ -59,7 +35,7 @@ map.on("load", function () {
 
 //create one overlay
 
-map.on("click", "drone", function (e) {
+monthlyMap.on("click", "drone", function (e) {
 
   const coordinates = e.features[0].geometry.coordinates.slice();
   const description = '<strong>Location:</strong>  ' + e.features[0].properties.place;
@@ -70,7 +46,7 @@ map.on("click", "drone", function (e) {
   new mapboxgl.Popup()
   .setLngLat(coordinates)
   .setHTML(description + '        ' + magnitude)
-  .addTo(map);
+  .addTo(monthlyMaps);
   });
    
 

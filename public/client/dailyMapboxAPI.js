@@ -11,31 +11,7 @@ let map = new mapboxgl.Map({
 const url =
   "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson";
 map.on("load", function () {
-  // Load an image from an external URL
 
-  // const request = new XMLHttpRequest();
-  // window.setInterval(function () {
-  //   // make a GET request to parse the GeoJSON at the url
-  //   request.open("GET", url, true);
-  //   request.onload = function () {
-  //     if (this.status >= 200 && this.status < 400) {
-  //       // retrieve the JSON from the response
-
-  //       const json = JSON.parse(this.response);
-  //       console.log(json)
-  
-  //       // update the drone symbol's location on the map
-  //       map.getSource("drone").setData(json);
-  //         //fly to animation not currently working!
-  //       // fly the map to the drone's current location
-  //       // map.flyTo({
-  //       //   center: json.geometry.coordinates,
-  //       //   speed: 1,
-  //       // });
-  //     }
-  //   };
-  //   request.send();
-  // }, 2000);
 
   map.addSource("drone", { type: "geojson", data: url });
   map.addLayer({
