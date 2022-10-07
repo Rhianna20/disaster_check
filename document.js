@@ -21,7 +21,7 @@ return `
     </div>
 
 
-    <script src="../client/dailyMapboxAPI.js"></script>
+    <script src="../client/hourlyMapboxAPI.js"></script>
    
     ${body}
             

@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-const disasterData = async () => {
+const earthquakesWithinAHour = async () => {
   // request for recent earthquake data
   try {
     const response = await axios.get(
@@ -26,4 +26,4 @@ const disasterData = async () => {
 //   }
 // }
 
-module.exports = { disasterData };
+module.exports = { earthquakesWithinAHour };

@@ -3,11 +3,13 @@ const React = require("react");
 const homepage = (props, ) => {
   return (
 
-    <div>
-      
-      <a className="buttonTemplate" type="button" href="/dailyEarthquakes" >Daily</a>
-      <a className="buttonTemplate" type="button" href="/weeklyEarthquakes">Weekly</a>
-      <a className="buttonTemplate" type="button" href="/monthlyEarthquakes">Monthly</a>
+    <div >
+      <div className="group">
+      <button className="button" id="hourButton" type="button" > <a href="/hourlyEarthquakes">Hourly</a></button>
+      <button className="button" id="dayButton" type="button"> <a href="/dailyEarthquakes" >Daily </a></button>
+      <button className="button" id="weekButton" type="button"> <a href="/weeklyEarthquakes">Weekly </a></button>
+      <button className="button" id="monthButton" type="button"> <a href="/monthlyEarthquakes">Monthly</a></button>
+      </div>
       <div className="recentEarthquakes" id="recentEarthquakes">
         <strong>
           <p className="headingtwo">Earthquakes gone of in the past hour:</p>
@@ -29,8 +31,8 @@ const homepage = (props, ) => {
         })}
       </div>
       {/* <p>A map of Earthquakes that have gone off in the last hours</p> */}
-      <button className="button" value="press">
-        Click 
+      <button className="button" id="factButton" value="press">
+     
       </button>
 
 

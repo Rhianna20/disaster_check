@@ -1,7 +1,4 @@
-function dailyDoc(body, map){
-    
-     
-     
+function monthlyTemplate(body, map){
     return `
         <html lang="en">
         <head>
@@ -10,9 +7,9 @@ function dailyDoc(body, map){
             
            
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+    
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
     <link href='/css/style.css' rel='stylesheet' />
-
     
             <title>Document</title>
     
@@ -20,22 +17,23 @@ function dailyDoc(body, map){
     <body>
     <h1 class='heading'> Disaster Hub </h1>
     
-    <div id='dailyMap' class='map'></div>
-                
-                
-        <script src="../client/dailyMapboxAPI.js"></script>
        
+        <div id='monthlyMap' class='map'></div>
 
-     
-
-     ${body}
+        
+        <script src="../client/monthlyMapboxAPI.js"></script>   
+       
+    
+         
+        ${body}
+                
+    
     
         <script src="/js/index.js"></script>
- 
         </body>
         </html>
     
     `
     }
     
-    module.exports = {dailyDoc};
+    module.exports = {monthlyTemplate};

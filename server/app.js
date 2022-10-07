@@ -5,22 +5,22 @@ const PORT = process.env.PORT || 3000;
 const React = require("react");
 const ReactDOMServer = require("react-dom/server");
 const { homepage } = require("./views/homepage.jsx");
-const disasterApi = require("./lib/hourlyShakes");
+const hourlyEarthquakes = require("./lib/hourlyShakes");
 const dailyEarthquake = require('./lib/dailyEarthquake')
-const { document } = require('../document');
+const weeklyEarthquake = require('./lib/weeklyEarthquake')
 const monthlyShakes = require('./lib/monthEarthquakes')
+const { document } = require('../document');
 const { dailyDoc} = require('../dailydoc')
-const {weeklyTemplate} = require('../weeklyTemplate')
+const { weeklyTemplate } = require('../weeklyTemplate');
+const { monthlyTemplate } = require("../monthlyTemplate");
 
 
-app.use(express.static("public"));
-
+app.use(express.static("public"));  
 
 // Request to main page
-app.get("/dailyEarthquakes", async function (req, res) {
-  const natualHazards = await disasterApi.disasterData();
+app.get("/hourlyEarthquakes", async function (req, res) {
+  const natualHazards = await hourlyEarthquakes.earthquakesWithinAHour();
  
-  
   const body = ReactDOMServer.renderToString(
     React.createElement(homepage, {
       data: natualHazards,
@@ -30,7 +30,8 @@ app.get("/dailyEarthquakes", async function (req, res) {
   res.send(html);
 });
 
-app.get("/weeklyEarthquakes", async function (req, res){
+
+app.get("/dailyEarthquakes", async function (req, res){
   
    const dailyShakeData = await dailyEarthquake.dailyShakes();
    
@@ -39,9 +40,23 @@ app.get("/weeklyEarthquakes", async function (req, res){
       data: dailyShakeData,
     })
 )
-  const html = weeklyTemplate(body)
+  const html = dailyDoc(body)
   res.send(html)
 })
+
+app.get("/weeklyEarthquakes", async function (req, res) {
+  const weeklyShakes = await weeklyEarthquake.earthquakesWithinAWeek();
+ 
+  
+  const body = ReactDOMServer.renderToString(
+    React.createElement(homepage, {
+      data: weeklyShakes,
+    })
+  );
+  const html = weeklyTemplate(body)
+  res.send(html);
+});
+
 
 app.get("/monthlyEarthquakes", async function (req, res){
   
@@ -52,7 +67,7 @@ app.get("/monthlyEarthquakes", async function (req, res){
      data: monthlyShakeData
    })
 )
- const html = dailyDoc(body)
+ const html = monthlyTemplate(body)
  res.send(html)
 })
 
