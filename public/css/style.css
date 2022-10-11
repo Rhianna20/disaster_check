@@ -1,5 +1,6 @@
 *{
-    font-family: Verdana, Geneva, Tahoma, sans-serif
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 }
 p{
     color:  rgb(27, 4, 48);
@@ -21,6 +22,8 @@ ul{
 body{
     height: 2000px;
     background-color: rgb(110, 216, 209);
+   
+  
 }
 .heading{
     color: rgb(255, 255, 255);
@@ -35,12 +38,15 @@ body{
    
 }
 .map {
-    width: 650;
+    width: 700;
     height: 500;
     align-items: center;
     align-self: center;
-    position: sticky;
-    left: 25%;
+    position: relative;
+    padding: 5;
+    margin-left: auto;
+    margin-right: auto;
+  
 }
 
 .headingtwo{
@@ -95,8 +101,17 @@ body{
 
 }
 .button {
-  
-    border-radius: 50%;
+  background: linear-gradient(0deg, rgba(255,151,0,1) 0%, rgba(251,75,2,1) 100%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  margin-left: auto;
+
+  margin-right: auto;
+  width: 100px;
+    height: 50px;
+    backface-visibility: hidden;
+    /* border-radius: 50%;
     color: white;
     box-sizing: border-box;
     align-items: center;
@@ -112,18 +127,115 @@ body{
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
-    perspective: 1000px;
+    perspective: 1000px; */
 }
-.button a {
-    color: white;
-    text-align: center;
-    align-items: center;
-    align-self: center;
-}
-.button:active{
-    background-color:#B8860B;
-}
-.buttonTemplate{
+
+
+.button {
+    background: linear-gradient(0deg, rgba(255,151,0,1) 0%, rgba(251,75,2,1) 100%);
+      line-height: 42px;
+      padding: 0;
+      border: none;
+      position: relative;
+      left: 10%;
+      margin-right: 25px;
+      width: 100px;
+        height: 50px;
+        backface-visibility: hidden;
+      
+    }
+    .button a {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      color: white;
+      font-size: 15px;
+      
+    }
+    .button a:link{
+        /* remove a tag underline */
+        text-decoration: none;
+
+        
+    }
+    .button:before,
+    .button:after {
+      position: absolute;
+      content: "";
+      right: 0;
+      bottom: 0;
+      background: rgba(251,75,2,1);
+      box-shadow:
+       -7px -7px 20px 0px rgba(255,255,255,.9),
+       -4px -4px 5px 0px rgba(255,255,255,.9),
+       7px 7px 20px 0px rgba(0,0,0,.2),
+       4px 4px 5px 0px rgba(0,0,0,.3);
+      transition: all 0.3s ease;
+    }
+    .button:before{
+       height: 0%;
+       width: 2px;
+    }
+    .button:after {
+      width: 0%;
+      height: 2px;
+    }
+    .button:hover{
+      color: rgba(251,75,2,1);
+      
+      background: transparent;
+      font-weight: bold;
+      font-size: 19px;
+      
+    }
+    .button:hover:before {
+      height: 100%;
+    }
+    .button:hover:after {
+      width: 100%;
+    }
+    .button a:before,
+    .button a:after {
+      position: absolute;
+      content: "";
+      left: 0;
+      top: 0;
+      background: rgba(251,75,2,1);
+      box-shadow:
+       -7px -7px 20px 0px rgba(255,255,255,.9),
+       -4px -4px 5px 0px rgba(255,255,255,.9),
+       7px 7px 20px 0px rgba(0,0,0,.2),
+       4px 4px 5px 0px rgba(0,0,0,.3);
+      transition: all 0.3s ease;
+    }
+    .button a:before {
+      width: 2px;
+      height: 0%;
+    }
+    .button a:after {
+      height: 2px;
+      width: 0%;
+    }
+    .button a:visited{
+        background: rgba(251,75,2,1);
+    }
+
+    .button a:hover:before {
+      height: 100%;
+    }
+    .button a:hover:after {
+        
+      width: 100%;
+    }
+    .button:focus {
+        background-color: white;
+    }
+ .button a:active {
+    background-color:  rgba(255, 94, 0 );
+ }
+
+/* .buttonTemplate{
     border-radius: 50%;
     color: white;
     box-sizing: border-box;
@@ -139,7 +251,7 @@ body{
     height: 50px;
     background-color: #f7b733; 
     transition: transform .2s;
-}
+} */
 @keyframes shake {
     10%, 90%{
         transform: translate3d(-1px, 0, 0);

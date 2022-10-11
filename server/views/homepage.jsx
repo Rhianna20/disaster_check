@@ -4,6 +4,7 @@ const homepage = (props, ) => {
   return (
 
     <div >
+     
       <div className="group">
       <button className="button" id="hourButton" type="button" > <a href="/hourlyEarthquakes">Hourly</a></button>
       <button className="button" id="dayButton" type="button"> <a href="/dailyEarthquakes" >Daily </a></button>
